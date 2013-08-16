@@ -1,0 +1,7 @@
+ #!/usr/bin/perl
+
+use LWP::Simple; 
+use strict;
+use warnings;
+
+my $content = get("http://gimb.us/?url=" .  $ARGV[0]); die "Dupa" unless defined $content; printf("http://gimb.us/" . $content . "\n");
