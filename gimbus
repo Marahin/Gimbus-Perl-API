@@ -1,7 +1,8 @@
- #!/usr/bin/perl
+#!/usr/bin/perl
 
 use LWP::Simple; 
 use strict;
 use warnings;
 
-my $content = get("http://gimb.us/?url=" .  $ARGV[0]); die "Dupa" unless defined $content; printf("http://gimb.us/" . $content . "\n");
+if(!$ARGV[0]){ die("Example: \n gimbus http://gimb.us/ \n"); }
+my $content = get("http://gimb.us/?url=" .  $ARGV[0]); die "Hadn't received any shortened URL; is Gimb.us up?" unless defined $content; printf("http://gimb.us/" . $content . "\n");
